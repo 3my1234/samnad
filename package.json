@@ -1,1 +1,15 @@
-{"name":"samnad-moonlight","version":"1.0.0","private":true,"description":"Samnad Moonlight company website","scripts":{"dev":"node server.mjs","start":"node server.mjs","check":"node --check script.js && node --check server.mjs"}}
+{
+  "name": "samnad-moonlight",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Samnad Moonlight company website",
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "check": "node --check script.js && node --check server.mjs && node --check enquiries.mjs",
+    "test": "node --test enquiries.test.mjs"
+  },
+  "dependencies": {
+    "nodemailer": "^10.1.7"
+  }
+}

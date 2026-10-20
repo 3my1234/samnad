@@ -5,14 +5,14 @@
   <meta name="theme-color" content="#171918">
   <meta name="description" content="Discover Samnad Moonlight Oil & Gas Nig. Ltd. — our company, our fleet, and the energy that moves us forward.">
   <title>Samnad Moonlight — Energy in motion.</title>
-  <link rel="stylesheet" href="styles.css"><script src="script.js?v=2" defer></script>
+  <link rel="stylesheet" href="styles.css?v=3"><script src="script.js?v=3" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header class="header">
     <a class="brand" href="#home" aria-label="Samnad Moonlight home"><span class="logo-crop"><img src="samnad logo.png" alt=""></span><span>SAMNAD MOONLIGHT<small>OIL & GAS NIG. LTD.</small></span></a>
     <nav aria-label="Main navigation" id="navigation"><a href="#company">Our company</a><a href="#operations">Our operations</a><a href="#approach">Our approach</a></nav>
-    <a class="header-contact" href="#contact">Let’s talk <span>↗</span></a><button class="menu" aria-expanded="false" aria-controls="navigation" aria-label="Open navigation">☰</button>
+    <a class="header-contact" href="#contact">Order diesel <span>↗</span></a><button class="menu" aria-expanded="false" aria-controls="navigation" aria-label="Open navigation">☰</button>
   </header>
   <main id="main">
     <section class="hero" id="home" aria-label="Samnad Moonlight fleet">
@@ -25,7 +25,22 @@
     <section class="photo-section" id="operations"><img src="Branded Samnad Moonlight tanker fleet-2.png" alt="Samnad Moonlight tanker trucks positioned at loading bays" loading="lazy"><div class="photo-shade"></div><div class="photo-top"><p class="eyebrow">OUR OPERATIONS</p><span>02 / AT THE SOURCE</span></div><div class="photo-content"><p class="eyebrow">FROM THE FIRST CONNECTION</p><h2>Every journey<br>has a starting point.</h2><p>A closer look at the world behind the fleet.<br>Where preparation meets the road ahead.</p><a class="button light" href="#fleet">Follow the journey <span>↓</span></a></div><span class="photo-foot">SAMNAD MOONLIGHT / A PICTURE OF OUR WORLD</span></section>
     <section class="fleet section-pad" id="fleet"><div class="section-top"><p class="eyebrow dark"><span class="red-line"></span> ON THE MOVE</p><span class="section-number">03 / THE JOURNEY</span></div><div class="fleet-heading"><h2>The road ahead.<br><span>The purpose behind it.</span></h2><p>Our identity travels with us.<br>Discover Samnad Moonlight in motion.</p></div><figure><img src="Samnad Moonlight tanker fleet-1.png" alt="Two Samnad Moonlight tankers travelling along a palm-lined road" loading="lazy"><figcaption><span>THE FLEET</span><span>Moving our story forward ↗</span></figcaption></figure></section>
     <section class="photo-section infrastructure" id="approach"><img src="Samnad Moonlight tanker fleet-3.png" alt="An overview of energy storage infrastructure and tanker movement" loading="lazy"><div class="photo-shade"></div><div class="photo-top"><p class="eyebrow">THE BIGGER PICTURE</p><span>04 / OUR OUTLOOK</span></div><div class="photo-content"><p class="eyebrow">BEYOND THE JOURNEY</p><h2>Connected by energy.<br>Driven by purpose.</h2><p>From infrastructure to movement, every part of the<br>energy journey belongs to a bigger story.</p><a class="button light" href="#contact">Be part of the conversation <span>↗</span></a></div></section>
-    <section class="contact section-pad" id="contact"><div><p class="eyebrow"><span class="red-line"></span> THE NEXT CHAPTER</p><h2>Let’s move<br>forward. <span>↗</span></h2><p>Have a question about Samnad Moonlight?<br>Prepare your enquiry and start the conversation.</p></div><form id="enquiry-form"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" placeholder="Full name" required maxlength="120"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required><label for="interest">I’d like to discuss</label><select id="interest" name="interest"><option>General enquiry</option><option>Company information</option><option>Business opportunities</option></select><label for="message">Your message</label><textarea id="message" name="message" placeholder="Tell us how we can help" rows="3" required maxlength="5000"></textarea><button class="button light" type="submit">Prepare enquiry <span>↗</span></button><p class="form-note">Creates an enquiry file for you to keep. Online delivery is not yet connected.</p><p id="form-status" role="status"></p></form></section>
+    <section class="contact section-pad" id="contact">
+      <div><p class="eyebrow"><span class="red-line"></span> DIESEL SUPPLY ENQUIRIES</p><h2>Your next<br>delivery. <span>&#8599;</span></h2><p>Tell us how much diesel you need and where you need it.<br>Our sales team will follow up to discuss price, availability, and delivery.</p><p class="form-note">Submitting a request does not confirm an order or reserve stock. No payment is required here.</p></div>
+      <form id="enquiry-form">
+        <label for="name">Full name</label><input id="name" name="name" autocomplete="name" placeholder="Your full name" required maxlength="120">
+        <label for="phone">Contact number</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="e.g. +234 801 234 5678" required maxlength="30">
+        <label for="email">Email address <span>(optional)</span></label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@company.com" maxlength="254">
+        <label for="company-name">Company <span>(optional)</span></label><input id="company-name" name="company" autocomplete="organization" placeholder="Business or organisation" maxlength="160">
+        <label for="litres">Diesel quantity (litres)</label><input id="litres" name="litres" type="number" inputmode="numeric" min="1" max="10000000" step="1" placeholder="e.g. 5000" required>
+        <label for="location">Delivery address / location</label><textarea id="location" name="location" autocomplete="street-address" placeholder="Street address, town/city, and state" rows="2" required maxlength="500"></textarea>
+        <label for="delivery-date">Preferred delivery date <span>(optional)</span></label><input id="delivery-date" name="date" type="date">
+        <label for="message">Additional details <span>(optional)</span></label><textarea id="message" name="message" placeholder="Site access, delivery instructions, or other requirements" rows="3" maxlength="3000"></textarea>
+        <div class="form-trap" aria-hidden="true"><label for="website">Leave this field empty</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
+        <label class="consent" for="consent"><input id="consent" name="consent" type="checkbox" required><span>I agree that Samnad may use my details to contact me about this diesel request.</span></label>
+        <button class="button light" type="submit">Request diesel <span>&#8599;</span></button><p id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
   </main>
   <footer><a class="footer-name" href="#home">SAMNAD MOONLIGHT<small>OIL & GAS NIG. LTD.</small></a><span>© <span id="year">2026</span> Samnad Moonlight. All rights reserved.</span><a href="#home">Back to top ↑</a></footer>
 </body>

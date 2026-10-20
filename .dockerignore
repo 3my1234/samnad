@@ -3,5 +3,6 @@ node_modules
 .codex
 .agents
 README.md
-server.mjs
-package.json
+Advanced-DNS-*.png
+.env
+.env.*

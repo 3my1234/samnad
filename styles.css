@@ -5,3 +5,5 @@
 .logo-crop{--logo-width:133px}
 .logo-crop img{width:var(--logo-width);height:auto;left:calc(50% - var(--logo-width)*.52533);top:calc(50% - var(--logo-width)*.23452)}
 @media(max-width:640px){.logo-crop{--logo-width:102px}}
+
+.contact .consent{display:flex;align-items:flex-start;gap:10px;line-height:1.6;margin-bottom:24px}.contact .consent input{width:16px;height:16px;margin:2px 0 0;flex-shrink:0;accent-color:var(--red)}.contact label>span{color:#b9beb6}.contact button:disabled{opacity:.6;cursor:wait;transform:none}.form-trap{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}.contact #form-status{line-height:1.8;overflow-wrap:anywhere}

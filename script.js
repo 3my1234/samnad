@@ -36,13 +36,30 @@ menu.addEventListener('click', () => {
 navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
 document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
 document.querySelector('#year').textContent = new Date().getFullYear();
-document.querySelector('#enquiry-form').addEventListener('submit', event => {
+document.querySelector('#enquiry-form').addEventListener('submit', async event => {
   event.preventDefault();
-  const data = new FormData(event.currentTarget);
-  const content = `SAMNAD MOONLIGHT — ENQUIRY\n\nName: ${data.get('name')}\nEmail: ${data.get('email')}\nSubject: ${data.get('interest')}\n\n${data.get('message')}\n\nThis enquiry has been prepared locally and has not been sent.\n`;
-  const url = URL.createObjectURL(new Blob([content], { type: 'text/plain;charset=utf-8' }));
-  const link = document.createElement('a');
-  link.href = url; link.download = 'samnad-moonlight-enquiry.txt'; link.click();
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
-  document.querySelector('#form-status').textContent = 'Your enquiry file is ready. It has not been sent — online delivery is not yet connected.';
+  const form = event.currentTarget;
+  const button = form.querySelector('button[type="submit"]');
+  if (button.disabled) return;
+  const status = document.querySelector('#form-status');
+  const data = Object.fromEntries(new FormData(form));
+  data.consent = form.elements.consent.checked;
+  button.disabled = true;
+  button.textContent = 'Sending request…';
+  form.setAttribute('aria-busy', 'true');
+  status.textContent = '';
+  try {
+    const response = await fetch('/api/diesel-enquiries', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data), signal: AbortSignal.timeout(45000) });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.message || 'Unable to send your request. Please try again.');
+    status.textContent = result.message;
+    form.reset();
+  } catch (error) {
+    status.textContent = error.name === 'TimeoutError' || error instanceof TypeError ? 'We could not confirm delivery. Please check your connection and try again shortly.' : error.message;
+  } finally {
+    button.disabled = false;
+    button.innerHTML = 'Request diesel <span>↗</span>';
+    form.removeAttribute('aria-busy');
+  }
 });
+document.querySelector('#delivery-date').min = new Date(Date.now() + 3600000).toISOString().slice(0, 10);
