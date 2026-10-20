@@ -16,7 +16,7 @@ function showSlide(index) {
 }
 function schedule() {
   clearInterval(timer);
-  if (!paused && !document.hidden) timer = setInterval(() => showSlide((current + 1) % slides.length), 7000);
+  if (!paused && !document.hidden) timer = setInterval(() => showSlide((current + 1) % slides.length), 5000);
   pauseButton.textContent = paused ? '▶' : 'Ⅱ';
   pauseButton.setAttribute('aria-label', paused ? 'Play slideshow' : 'Pause slideshow');
 }
